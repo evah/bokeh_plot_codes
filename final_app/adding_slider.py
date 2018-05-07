@@ -25,3 +25,20 @@ slider.on_change('value',update_plot)
 # Make a row layout of widgetbox(slider) and plot and add it to the current document
 layout = row(widgetbox(slider), plot)
 curdoc().add_root(layout)
+
+
+# hover
+# Import HoverTool from bokeh.models
+from bokeh.models import HoverTool
+
+# Create a HoverTool: hover
+hover = HoverTool(tooltips = [('Country','@country')])
+
+# Add the HoverTool to the plot
+plot.add_tools(hover)
+
+# Create layout: layout
+layout = row(widgetbox(slider), plot)
+
+# Add layout to current document
+curdoc().add_root(layout)
